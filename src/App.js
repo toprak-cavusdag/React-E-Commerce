@@ -3,18 +3,21 @@ import Home from './pages/Home';
 import Details from './pages/Details';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PageContainer from './containers/PageContainer';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='detail/:id' element={<Details />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <PageContainer>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='detail/:id' element={<Details />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </PageContainer>
     </>
   );
 }
